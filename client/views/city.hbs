@@ -6,7 +6,9 @@
     <h1>{{title}}</h1>
     <ul>
       {{#each meetup.results}}
-      <li>{{name}}</li>
+      <li><a href="{{event_url}}">{{name}}</a>
+        <p>{{{description}}}</p>
+      </li>
       {{/each}}
     </ul>
     <hr />
