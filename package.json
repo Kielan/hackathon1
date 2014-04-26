@@ -1,0 +1,17 @@
+{
+  "name": "programmermeetup.com",
+  "version": "1.0.0",
+  "description": "A simple template project built at the first Bangkok nodejs hackathon.",
+  "main": "deploy/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "http://github.com/gamecook/phaser-template",
+  "author": "Jesse Freeman",
+  "license": "MIT",
+  "dependencies": {
+    "express": "=4.x",
+    "consolidate": "~0.10.0",
+    "handlebars": "~2.0.0-alpha.2"
+  }
+}
