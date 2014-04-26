@@ -10,8 +10,9 @@
   "author": "Jesse Freeman",
   "license": "MIT",
   "dependencies": {
-    "express": "=4.x",
-    "consolidate": "~0.10.0",
-    "handlebars": "~2.0.0-alpha.2"
+    "express": "=4.x"
+    , "consolidate": "~0.10.0"
+    , "handlebars": "~2.0.0-alpha.2"
+    , "meetup-api": "~0.1.3"
   }
 }
