@@ -1,8 +1,11 @@
 // Load module dependencies
 var express = require('express')
 , cons = require('consolidate')
+// abliss's personal key... will be turned off someday
+, API_KEY = "5d1d2266525715f473340c66482f68"
+, meetup = require('meetup-api')(API_KEY)
+, fs = require('fs')
 , app = express();
-
 
 // Templating
 // .hbs files should be handled by `handlebars`
@@ -24,10 +27,14 @@ app.get('/', function (req, res) {
   res.render('./views/index', {title: 'programmer-meetup', state: location[1], city: 'Portland'});
 });
 
-app.get('/portland/', function (req, res) {
-  console.log('portlander');
+app.get('/Portland', function (req, res) {
 
-  res.render('./views/city');
+  console.log('portlander', {title: 'Portland'});
+
+  // Tool to scrape events from meetup.com
+  var resp = JSON.parse(fs.readFileSync('./client/assets/meetup-events.json'));
+     
+  res.render('./views/city', {meetup: resp});
 });
 
 app.listen(8768);
