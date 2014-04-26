@@ -28,13 +28,13 @@ app.get('/', function (req, res) {
 });
 
 app.get('/Portland', function (req, res) {
+    var context = {title: 'Portland'};
+    console.log('portlander', context);
 
-  console.log('portlander', {title: 'Portland'});
-
-  // Tool to scrape events from meetup.com
-  var resp = JSON.parse(fs.readFileSync('./client/assets/meetup-events.json'));
+    // Tool to scrape events from meetup.com
+    context.meetup = (fs.readFileSync('./client/assets/meetup-events.json'));
      
-  res.render('./views/city', {meetup: resp});
+    res.render('./views/city', context);
 });
 
 app.listen(8768);
