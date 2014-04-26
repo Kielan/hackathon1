@@ -32,7 +32,7 @@ app.get('/Portland', function (req, res) {
     console.log('portlander', context);
 
     // Tool to scrape events from meetup.com
-    context.meetup = (fs.readFileSync('./client/assets/meetup-events.json'));
+    context.meetup = JSON.parse(fs.readFileSync('./client/assets/meetup-events.json'));
      
     res.render('./views/city', context);
 });
